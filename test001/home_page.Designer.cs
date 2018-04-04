@@ -37,7 +37,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1134, 22);
+            this.label1.Location = new System.Drawing.Point(58, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.lb_user_name.AutoSize = true;
             this.lb_user_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_user_name.Location = new System.Drawing.Point(1220, 22);
+            this.lb_user_name.Location = new System.Drawing.Point(144, 40);
             this.lb_user_name.Name = "lb_user_name";
             this.lb_user_name.Size = new System.Drawing.Size(0, 25);
             this.lb_user_name.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             this.btn_signout.BackColor = System.Drawing.Color.MistyRose;
             this.btn_signout.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_signout.Location = new System.Drawing.Point(1139, 72);
+            this.btn_signout.Location = new System.Drawing.Point(63, 90);
             this.btn_signout.Name = "btn_signout";
             this.btn_signout.Size = new System.Drawing.Size(179, 50);
             this.btn_signout.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1381, 953);
+            this.ClientSize = new System.Drawing.Size(304, 188);
             this.Controls.Add(this.btn_signout);
             this.Controls.Add(this.lb_user_name);
             this.Controls.Add(this.label1);
