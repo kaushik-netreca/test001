@@ -28,5 +28,10 @@ namespace test001
             login lg = new login();
             lg.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
