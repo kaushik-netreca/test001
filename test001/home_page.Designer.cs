@@ -31,13 +31,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_user_name = new System.Windows.Forms.Label();
             this.btn_signout = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(89, 41);
+            this.label1.Location = new System.Drawing.Point(1282, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 0;
@@ -48,7 +54,7 @@
             // 
             this.lb_user_name.AutoSize = true;
             this.lb_user_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_user_name.Location = new System.Drawing.Point(142, 105);
+            this.lb_user_name.Location = new System.Drawing.Point(1433, 24);
             this.lb_user_name.Name = "lb_user_name";
             this.lb_user_name.Size = new System.Drawing.Size(0, 25);
             this.lb_user_name.TabIndex = 1;
@@ -57,19 +63,67 @@
             // 
             this.btn_signout.BackColor = System.Drawing.Color.MistyRose;
             this.btn_signout.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_signout.Location = new System.Drawing.Point(12, 215);
+            this.btn_signout.Location = new System.Drawing.Point(1640, 12);
             this.btn_signout.Name = "btn_signout";
-            this.btn_signout.Size = new System.Drawing.Size(285, 86);
+            this.btn_signout.Size = new System.Drawing.Size(134, 37);
             this.btn_signout.TabIndex = 2;
             this.btn_signout.Text = "Sign Out";
             this.btn_signout.UseVisualStyleBackColor = false;
             this.btn_signout.Click += new System.EventHandler(this.Btn_signout_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(1111, 703);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(620, 304);
+            this.tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(612, 271);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1669, 866);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(68, 617);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1014, 386);
+            this.panel2.TabIndex = 0;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(79, 67);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(777, 494);
+            this.webBrowser1.TabIndex = 4;
+            // 
             // home_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 313);
+            this.ClientSize = new System.Drawing.Size(1786, 1043);
+            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btn_signout);
             this.Controls.Add(this.lb_user_name);
             this.Controls.Add(this.label1);
@@ -77,6 +131,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HOME";
             this.Load += new System.EventHandler(this.Home_page_Load);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,5 +142,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_user_name;
         private System.Windows.Forms.Button btn_signout;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
