@@ -57,9 +57,9 @@
             // 
             this.btn_signout.BackColor = System.Drawing.Color.MistyRose;
             this.btn_signout.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_signout.Location = new System.Drawing.Point(63, 174);
+            this.btn_signout.Location = new System.Drawing.Point(12, 215);
             this.btn_signout.Name = "btn_signout";
-            this.btn_signout.Size = new System.Drawing.Size(179, 50);
+            this.btn_signout.Size = new System.Drawing.Size(285, 86);
             this.btn_signout.TabIndex = 2;
             this.btn_signout.Text = "Sign Out";
             this.btn_signout.UseVisualStyleBackColor = false;
@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 253);
+            this.ClientSize = new System.Drawing.Size(317, 313);
             this.Controls.Add(this.btn_signout);
             this.Controls.Add(this.lb_user_name);
             this.Controls.Add(this.label1);
