@@ -34,5 +34,28 @@ namespace test001
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 lg1 = new Form1();
+            lg1.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form2 lg2 = new Form2();
+            lg2.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form3 lg3 = new Form3();
+            lg3.Show();
+
+        }
     }
 }
