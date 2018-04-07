@@ -91,7 +91,7 @@
             // 
             // btn_login
             // 
-            this.btn_login.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_login.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.Location = new System.Drawing.Point(37, 469);
             this.btn_login.Name = "btn_login";
