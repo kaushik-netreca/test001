@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home_page));
             this.label1 = new System.Windows.Forms.Label();
             this.lb_user_name = new System.Windows.Forms.Label();
@@ -36,29 +37,38 @@
             this.cbx_market = new System.Windows.Forms.ComboBox();
             this.tb_ctrl_1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_add_warehouse = new System.Windows.Forms.Button();
-            this.btn_add_employee = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_add_store = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_add_employee = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tb_ctrl_1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -147,6 +157,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btn_add_warehouse);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Location = new System.Drawing.Point(254, 4);
@@ -155,6 +166,88 @@
             this.tabPage1.Size = new System.Drawing.Size(1509, 898);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ct,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridView1.Location = new System.Drawing.Point(35, 109);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1444, 398);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // ct
+            // 
+            this.ct.HeaderText = "Ct";
+            this.ct.Name = "ct";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Submaster ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Market ID";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Warehouse ID";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Name";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Phone";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Status";
+            this.Column6.Name = "Column6";
+            // 
+            // btn_add_warehouse
+            // 
+            this.btn_add_warehouse.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_warehouse.Location = new System.Drawing.Point(220, 30);
+            this.btn_add_warehouse.Name = "btn_add_warehouse";
+            this.btn_add_warehouse.Size = new System.Drawing.Size(107, 45);
+            this.btn_add_warehouse.TabIndex = 2;
+            this.btn_add_warehouse.Text = "+ ADD";
+            this.btn_add_warehouse.UseVisualStyleBackColor = true;
+            this.btn_add_warehouse.Click += new System.EventHandler(this.btn_add_warehouse_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 49);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Warehouse";
             // 
             // tabPage2
             // 
@@ -168,6 +261,26 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btn_add_store
+            // 
+            this.btn_add_store.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_store.Location = new System.Drawing.Point(140, 30);
+            this.btn_add_store.Name = "btn_add_store";
+            this.btn_add_store.Size = new System.Drawing.Size(107, 45);
+            this.btn_add_store.TabIndex = 3;
+            this.btn_add_store.Text = "+ ADD";
+            this.btn_add_store.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 49);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Store";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btn_add_employee);
@@ -180,101 +293,15 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // btn_add_employee
             // 
-            this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Location = new System.Drawing.Point(254, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1509, 898);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Location = new System.Drawing.Point(254, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1509, 898);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.label8);
-            this.tabPage6.Location = new System.Drawing.Point(254, 4);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1509, 898);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.label9);
-            this.tabPage7.Location = new System.Drawing.Point(254, 4);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1509, 898);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "tabPage7";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.label10);
-            this.tabPage8.Location = new System.Drawing.Point(254, 4);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1509, 898);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "tabPage8";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.label11);
-            this.tabPage9.Location = new System.Drawing.Point(254, 4);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1509, 898);
-            this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "tabPage9";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 49);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Warehouse";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 49);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Store";
+            this.btn_add_employee.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_employee.Location = new System.Drawing.Point(204, 32);
+            this.btn_add_employee.Name = "btn_add_employee";
+            this.btn_add_employee.Size = new System.Drawing.Size(107, 45);
+            this.btn_add_employee.TabIndex = 3;
+            this.btn_add_employee.Text = "+ ADD";
+            this.btn_add_employee.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -285,6 +312,17 @@
             this.label5.Size = new System.Drawing.Size(159, 49);
             this.label5.TabIndex = 1;
             this.label5.Text = "Employee";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Location = new System.Drawing.Point(254, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1509, 898);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -297,6 +335,17 @@
             this.label6.Text = "Purchase Order";
             this.label6.UseMnemonic = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Location = new System.Drawing.Point(254, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1509, 898);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -306,6 +355,17 @@
             this.label7.Size = new System.Drawing.Size(187, 49);
             this.label7.TabIndex = 1;
             this.label7.Text = "Sales Order";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.label8);
+            this.tabPage6.Location = new System.Drawing.Point(254, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1509, 898);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -317,6 +377,17 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Inventory";
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.label9);
+            this.tabPage7.Location = new System.Drawing.Point(254, 4);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1509, 898);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -326,6 +397,17 @@
             this.label9.Size = new System.Drawing.Size(118, 49);
             this.label9.TabIndex = 1;
             this.label9.Text = "Invoice";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.label10);
+            this.tabPage8.Location = new System.Drawing.Point(254, 4);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1509, 898);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "tabPage8";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -337,6 +419,17 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Configuration";
             // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.label11);
+            this.tabPage9.Location = new System.Drawing.Point(254, 4);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(1509, 898);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "tabPage9";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -347,36 +440,15 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Settings";
             // 
-            // btn_add_warehouse
+            // pictureBox1
             // 
-            this.btn_add_warehouse.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_warehouse.Location = new System.Drawing.Point(220, 30);
-            this.btn_add_warehouse.Name = "btn_add_warehouse";
-            this.btn_add_warehouse.Size = new System.Drawing.Size(107, 45);
-            this.btn_add_warehouse.TabIndex = 2;
-            this.btn_add_warehouse.Text = "+ ADD";
-            this.btn_add_warehouse.UseVisualStyleBackColor = true;
-            this.btn_add_warehouse.Click += new System.EventHandler(this.btn_add_warehouse_Click);
-            // 
-            // btn_add_employee
-            // 
-            this.btn_add_employee.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_employee.Location = new System.Drawing.Point(204, 32);
-            this.btn_add_employee.Name = "btn_add_employee";
-            this.btn_add_employee.Size = new System.Drawing.Size(107, 45);
-            this.btn_add_employee.TabIndex = 3;
-            this.btn_add_employee.Text = "+ ADD";
-            this.btn_add_employee.UseVisualStyleBackColor = true;
-            // 
-            // btn_add_store
-            // 
-            this.btn_add_store.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_store.Location = new System.Drawing.Point(140, 30);
-            this.btn_add_store.Name = "btn_add_store";
-            this.btn_add_store.Size = new System.Drawing.Size(107, 45);
-            this.btn_add_store.TabIndex = 3;
-            this.btn_add_store.Text = "+ ADD";
-            this.btn_add_store.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(192, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // home_page
             // 
@@ -397,6 +469,7 @@
             this.tb_ctrl_1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -449,5 +522,13 @@
         private System.Windows.Forms.Button btn_add_warehouse;
         private System.Windows.Forms.Button btn_add_store;
         private System.Windows.Forms.Button btn_add_employee;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
