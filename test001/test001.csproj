@@ -153,6 +153,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_warehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_warehouse.Designer.cs">
+      <DependentUpon>add_warehouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="warehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="add_warehouse.resx">
+      <DependentUpon>add_warehouse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="home_page.resx">
       <DependentUpon>home_page.cs</DependentUpon>
     </EmbeddedResource>
