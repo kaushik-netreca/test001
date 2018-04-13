@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WRP_WHOLESALEDataSet" targetNamespace="http://tempuri.org/WRP_WHOLESALEDataSet.xsd" xmlns:mstns="http://tempuri.org/WRP_WHOLESALEDataSet.xsd" xmlns="http://tempuri.org/WRP_WHOLESALEDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WRP_WHOLESALEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WRP_WHOLESALEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.test001.Properties.Settings.GlobalReference.Default.WRP_WHOLESALEConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_WAREHOUSE-1TableAdapter" GeneratorDataComponentClassName="VW_WAREHOUSE_1TableAdapter" Name="VW_WAREHOUSE-1" UserDataComponentName="VW_WAREHOUSE-1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WRP_WHOLESALEConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT sid, submaster_id, market_id, id, name, is_active, phone FROM WRP_WHOLESALE.VW_WAREHOUSE-1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WRP_WHOLESALEDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="WRP_WHOLESALEDataSet" msprop:Generator_UserDSName="WRP_WHOLESALEDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VW_WAREHOUSE-1" msprop:Generator_TableClassName="_VW_WAREHOUSE_1DataTable" msprop:Generator_TableVarName="_tableVW_WAREHOUSE_1" msprop:Generator_TablePropName="_VW_WAREHOUSE_1" msprop:Generator_RowDeletingName="_VW_WAREHOUSE_1RowDeleting" msprop:Generator_RowChangingName="_VW_WAREHOUSE_1RowChanging" msprop:Generator_RowEvHandlerName="_VW_WAREHOUSE_1RowChangeEventHandler" msprop:Generator_RowDeletedName="_VW_WAREHOUSE_1RowDeleted" msprop:Generator_UserTableName="VW_WAREHOUSE-1" msprop:Generator_RowChangedName="_VW_WAREHOUSE_1RowChanged" msprop:Generator_RowEvArgName="_VW_WAREHOUSE_1RowChangeEvent" msprop:Generator_RowClassName="_VW_WAREHOUSE_1Row">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
