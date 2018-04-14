@@ -8,8 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Collections.Specialized;
 using System.IO;
+using Microsoft.Win32;
+using System.Management;
+using System.Text.RegularExpressions;
+using System.Net.Http;
 
 namespace test001
 {
@@ -74,6 +79,71 @@ namespace test001
                         home.Show();
                     }
                 }
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Interval = 4000;
+            try
+            {
+                //Reading version from local text file. Could be changed later
+                string id = System.IO.File.ReadAllText(@"C:\Users\Kaushik\test\app_id.txt");
+                string local_reboot_flag = System.IO.File.ReadAllText(@"C:\Users\Kaushik\test\app_reboot_flag.txt");
+                string local_shutdown_flag = System.IO.File.ReadAllText(@"C:\Users\Kaushik\test\app_shutdown_flag.txt");
+                string local_version = System.IO.File.ReadAllText(@"C:\Users\Kaushik\test\app_version.txt");
+                string[] integerSrings = local_version.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                int[] integers = new int[integerSrings.Length];
+                for (int n = 0; n < integerSrings.Length; n++)
+                {
+                    integers[n] = int.Parse(integerSrings[n]);
+                }
+                Console.WriteLine("===>> LOCAL VERSION : {0}", integers[0]);
+
+                using (WebClient web = new WebClient())
+                {
+                    // Reading server version
+                    web.Headers.Add("X-Authorization", "authorizationString");
+                    string response1 = web.DownloadString("http://localhost:8045/search/" + local_version);
+                    response1 = Regex.Replace(response1, "[^0-9]+", string.Empty);
+                    int x = Int32.Parse(response1);
+
+                    Console.WriteLine("===>> SERVER VERSION : {0}", x);
+
+                    //Compare local and server versions
+                    if (x == integers[0])
+                    {
+                        Console.WriteLine("===>> SAME VERSIONS. No Update Required");
+                    }
+                    else
+                    {
+                        Console.WriteLine("===>> UPDATE REQUIRED");
+                        //If versions are different on server and local, delete local and download new contents from server
+                        //Delete the existing file
+                        if (System.IO.File.Exists(@"C:\Users\Kaushik\test\updated_file.txt"))
+                        {
+                            System.IO.File.Delete(@"C:\Users\Kaushik\test\updated_file.txt");
+                        }
+
+                        //Download new file from server
+                        using (WebClient fileDownload = new WebClient())
+                        {
+                            fileDownload.DownloadFile("http://storage.ezdigitalboard.com/test_tobedeleted.txt", @"C:\Users\Kaushik\test\updated_file.txt");
+                        }
+                        Console.WriteLine("===>> FILES UPDATED");
+                    }
+                }
+
+                //Sending status to the API
+                WebRequest request = new WebRequest.Create("http://localhost:8045/app-status/" + id + "/" + local_version + "/" + local_reboot_flag + "/" + local_shutdown_flag + "/");
+                Console.WriteLine("[STATUS API] : {0}", request);
+                request.Method = "GET";
+                WebResponse response = request.GetResponse();
+                response.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
