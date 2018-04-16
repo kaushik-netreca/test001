@@ -65,7 +65,7 @@ namespace test001
                     Console.WriteLine(result);
                     if (result.Contains("message_login"))
                     {
-                        MessageBox.Show("INVALID LOGIN. Please try again" + "\n" + "API RESPONSE : " + result , "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("INVALID LOGIN. Please try again", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txb_access_code.Text = "";
                         txb_user_name.Text = "";
                         txb_password.Text = "";
@@ -76,10 +76,6 @@ namespace test001
                     }
                     else if (result.Contains("login_response"))
                     {
-                        // MessageBox.Show("VALID LOGIN" + "\n" + "API RESPONSE : " + result, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //txb_access_code.Text = "";
-                        //txb_user_name.Text = "";
-                        // txb_password.Text = "";
                         this.Hide();
                         home_page home = new home_page(user_name);
                         home.Show();
