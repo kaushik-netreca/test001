@@ -15,6 +15,7 @@ using Microsoft.Win32;
 using System.Management;
 using System.Text.RegularExpressions;
 using System.Net.Http;
+using Timer = System.Timers.Timer;
 
 namespace test001
 {
@@ -23,6 +24,10 @@ namespace test001
         public login()
         {
             InitializeComponent();
+            Timer t = new Timer(5000);
+            t.AutoReset = true;
+            t.Elapsed += new System.Timers.ElapsedEventHandler(t_Elapsed);
+            t.Start();
         }
 
         private void Btn_login_Click(object sender, EventArgs e)
@@ -82,9 +87,10 @@ namespace test001
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        public static void t_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            timer1.Interval = 4000;
+            //timer2.Interval = 4000;
+            Console.WriteLine("===>>TIMER TICK STARTED -----");
             try
             {
                 //Reading version from local text file. Could be changed later
@@ -102,13 +108,21 @@ namespace test001
 
                 using (WebClient web = new WebClient())
                 {
-                    // Reading server version
-                    web.Headers.Add("X-Authorization", "authorizationString");
-                    string response1 = web.DownloadString("http://localhost:8045/search/" + local_version);
-                    response1 = Regex.Replace(response1, "[^0-9]+", string.Empty);
-                    int x = Int32.Parse(response1);
 
-                    Console.WriteLine("===>> SERVER VERSION : {0}", x);
+                    // Reading server version, reboot flag and shutdown flag
+                    web.Headers.Add("X-Authorization", "authorizationString");
+                    string response1 = web.DownloadString("http://localhost:8045/search/" + id);     //hard coding [needs to be changed] 
+                    response1 = Regex.Replace(response1, "[^0-9]+", string.Empty);
+                    var ver = response1.Substring(response1.Length - 1);
+                    var rbt_flag = response1.Substring(response1.Length - 3, 1);
+                    var shd_flag = response1.Substring(response1.Length - 2, 1);
+                    int x  = Int32.Parse(ver);
+                    int xr = Int32.Parse(rbt_flag);
+                    int xs = Int32.Parse(shd_flag);
+
+                    Console.WriteLine("===>> SERVER VERSION : {0}", ver);
+                    Console.WriteLine("===>> SERVER REBOOT FLAG : {0}", rbt_flag);
+                    Console.WriteLine("===>> SERVER SHUTDOWN FLAG : {0}", shd_flag);
 
                     //Compare local and server versions
                     if (x == integers[0])
@@ -118,8 +132,10 @@ namespace test001
                     else
                     {
                         Console.WriteLine("===>> UPDATE REQUIRED");
-                        //If versions are different on server and local, delete local and download new contents from server
+                        //If versions are different on server and local, write server version to local and delete local and download new contents from server
                         //Delete the existing file
+                        System.IO.File.WriteAllText(@"C:\Users\Kaushik\test\app_version.txt", ver.ToString());
+                        Console.WriteLine("===>> UPDATE LOCAL VERSION to SERVER VERSION");
                         if (System.IO.File.Exists(@"C:\Users\Kaushik\test\updated_file.txt"))
                         {
                             System.IO.File.Delete(@"C:\Users\Kaushik\test\updated_file.txt");
@@ -132,14 +148,41 @@ namespace test001
                         }
                         Console.WriteLine("===>> FILES UPDATED");
                     }
+
+                    //Compare local and server reboot flags
+                    // if different writes server flag to local and restart
+                    if (rbt_flag != local_reboot_flag)
+                    {
+                        System.IO.File.WriteAllText(@"C:\Users\Kaushik\test\app_reboot_flag.txt", xr.ToString());
+                        Console.WriteLine("===>> UPDATE LOCAL VERSION to SERVER VERSION");
+                        Application.Restart();
+                        Console.WriteLine(" Different RESTART FLAGS from server and local");
+                    }
+                    else
+                    {
+                        Console.WriteLine(" SAME RESTART FLAGS from server and local");
+                    }
+                    //Compare local and server shutdown flags
+                    // if different writes server flag to local and shutdown
+                    if (shd_flag != local_shutdown_flag)
+                    {
+                        System.IO.File.WriteAllText(@"C:\Users\Kaushik\test\app_shutdown_flag.txt", xs.ToString());
+                        Application.Exit();
+                        Console.WriteLine(" Different SHUTDOWN FLAGS from server and local");
+                    }
+                    else
+                    {
+                        Console.WriteLine(" SAME SHUTDOWN FLAGS from server and local");
+                    }
                 }
 
                 //Sending status to the API
-                WebRequest request = new WebRequest.Create("http://localhost:8045/app-status/" + id + "/" + local_version + "/" + local_reboot_flag + "/" + local_shutdown_flag + "/");
-                Console.WriteLine("[STATUS API] : {0}", request);
-                request.Method = "GET";
-                WebResponse response = request.GetResponse();
-                response.Close();
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8045/app-status/" + id + "/" + local_version + "/" + local_reboot_flag + "/" + local_shutdown_flag + "/");
+                Console.WriteLine("[STATUS API] : {0}", httpWebRequest);
+                httpWebRequest.Method = "GET";
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                httpResponse.Close();
+                
             }
             catch(Exception ex)
             {
