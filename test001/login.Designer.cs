@@ -38,7 +38,7 @@
             this.txb_password = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,9 +114,10 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // timer1
+            // timer2
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 4000;
             // 
             // login
             // 
@@ -151,6 +152,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.TextBox txb_user_name;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
