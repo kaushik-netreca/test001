@@ -72,6 +72,7 @@ namespace test001
             tabPage7.Text = "Invoice";
             tabPage8.Text = "Configuration";
             tabPage9.Text = "Settings";
+            dataGridView1.Font = new Font("Arial", 10, FontStyle.Regular); 
         }
 
         private void Btn_signout_Click(object sender, EventArgs e)
