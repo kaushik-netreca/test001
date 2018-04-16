@@ -23,6 +23,7 @@ namespace test001
     {
         public login()
         {
+            //intializing a timer to execute a functionevery x seconds
             InitializeComponent();
             Timer t = new Timer(5000);
             t.AutoReset = true;
