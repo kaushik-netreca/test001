@@ -37,6 +37,11 @@
             this.cbx_market = new System.Windows.Forms.ComboBox();
             this.tb_ctrl_1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl_details = new System.Windows.Forms.TabControl();
+            this.Details = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +71,21 @@
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tb_wh_detail_market = new System.Windows.Forms.TextBox();
+            this.tb_wh_detail_sm = new System.Windows.Forms.TextBox();
+            this.tb_wh_detail_name = new System.Windows.Forms.TextBox();
+            this.tb_wh_detail_tr = new System.Windows.Forms.TextBox();
+            this.Stores = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.store_owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_ctrl_1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabControl_details.SuspendLayout();
+            this.Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -78,6 +96,8 @@
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Stores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,6 +177,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.tabControl_details);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btn_add_warehouse);
             this.tabPage1.Controls.Add(this.label3);
@@ -165,7 +186,67 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1509, 898);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Warehouse";
+            // 
+            // tabControl_details
+            // 
+            this.tabControl_details.Controls.Add(this.Details);
+            this.tabControl_details.Controls.Add(this.Stores);
+            this.tabControl_details.Font = new System.Drawing.Font("Segoe Script", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl_details.Location = new System.Drawing.Point(35, 479);
+            this.tabControl_details.Name = "tabControl_details";
+            this.tabControl_details.SelectedIndex = 0;
+            this.tabControl_details.Size = new System.Drawing.Size(1444, 395);
+            this.tabControl_details.TabIndex = 4;
+            // 
+            // Details
+            // 
+            this.Details.Controls.Add(this.tb_wh_detail_tr);
+            this.Details.Controls.Add(this.tb_wh_detail_name);
+            this.Details.Controls.Add(this.tb_wh_detail_sm);
+            this.Details.Controls.Add(this.tb_wh_detail_market);
+            this.Details.Controls.Add(this.label15);
+            this.Details.Controls.Add(this.label14);
+            this.Details.Controls.Add(this.label13);
+            this.Details.Controls.Add(this.label12);
+            this.Details.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Details.Location = new System.Drawing.Point(4, 42);
+            this.Details.Name = "Details";
+            this.Details.Padding = new System.Windows.Forms.Padding(3);
+            this.Details.Size = new System.Drawing.Size(1436, 349);
+            this.Details.TabIndex = 1;
+            this.Details.Text = "Details";
+            this.Details.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(382, 171);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(73, 28);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Name :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(312, 112);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 28);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Submaster ID : ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(343, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(112, 28);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Market ID : ";
             // 
             // dataGridView1
             // 
@@ -190,8 +271,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1444, 398);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1444, 344);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // ct
             // 
@@ -258,7 +341,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1509, 898);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Store";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btn_add_store
@@ -290,7 +373,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1509, 898);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Employee";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btn_add_employee
@@ -450,6 +533,105 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(320, 227);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 28);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Tax Rate ( % ) :";
+            // 
+            // tb_wh_detail_market
+            // 
+            this.tb_wh_detail_market.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_wh_detail_market.Location = new System.Drawing.Point(498, 53);
+            this.tb_wh_detail_market.Name = "tb_wh_detail_market";
+            this.tb_wh_detail_market.ReadOnly = true;
+            this.tb_wh_detail_market.Size = new System.Drawing.Size(280, 34);
+            this.tb_wh_detail_market.TabIndex = 4;
+            // 
+            // tb_wh_detail_sm
+            // 
+            this.tb_wh_detail_sm.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_wh_detail_sm.Location = new System.Drawing.Point(498, 112);
+            this.tb_wh_detail_sm.Name = "tb_wh_detail_sm";
+            this.tb_wh_detail_sm.ReadOnly = true;
+            this.tb_wh_detail_sm.Size = new System.Drawing.Size(280, 34);
+            this.tb_wh_detail_sm.TabIndex = 5;
+            // 
+            // tb_wh_detail_name
+            // 
+            this.tb_wh_detail_name.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_wh_detail_name.Location = new System.Drawing.Point(498, 168);
+            this.tb_wh_detail_name.Name = "tb_wh_detail_name";
+            this.tb_wh_detail_name.ReadOnly = true;
+            this.tb_wh_detail_name.Size = new System.Drawing.Size(280, 34);
+            this.tb_wh_detail_name.TabIndex = 6;
+            // 
+            // tb_wh_detail_tr
+            // 
+            this.tb_wh_detail_tr.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_wh_detail_tr.Location = new System.Drawing.Point(498, 227);
+            this.tb_wh_detail_tr.Name = "tb_wh_detail_tr";
+            this.tb_wh_detail_tr.ReadOnly = true;
+            this.tb_wh_detail_tr.Size = new System.Drawing.Size(178, 34);
+            this.tb_wh_detail_tr.TabIndex = 7;
+            // 
+            // Stores
+            // 
+            this.Stores.Controls.Add(this.dataGridView2);
+            this.Stores.Location = new System.Drawing.Point(4, 42);
+            this.Stores.Name = "Stores";
+            this.Stores.Padding = new System.Windows.Forms.Padding(3);
+            this.Stores.Size = new System.Drawing.Size(1436, 349);
+            this.Stores.TabIndex = 2;
+            this.Stores.Text = "Stores";
+            this.Stores.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name,
+            this.store_owner,
+            this.status});
+            this.dataGridView2.Location = new System.Drawing.Point(22, 22);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(1393, 311);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Store ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // store_owner
+            // 
+            this.store_owner.HeaderText = "Store Owner";
+            this.store_owner.Name = "store_owner";
+            this.store_owner.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
             // home_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -469,6 +651,9 @@
             this.tb_ctrl_1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabControl_details.ResumeLayout(false);
+            this.Details.ResumeLayout(false);
+            this.Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -487,6 +672,8 @@
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Stores.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,5 +717,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.TabControl tabControl_details;
+        private System.Windows.Forms.TabPage Details;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox tb_wh_detail_tr;
+        private System.Windows.Forms.TextBox tb_wh_detail_name;
+        private System.Windows.Forms.TextBox tb_wh_detail_sm;
+        private System.Windows.Forms.TextBox tb_wh_detail_market;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TabPage Stores;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn store_owner;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
