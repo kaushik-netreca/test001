@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -72,7 +76,40 @@ namespace test001
             tabPage7.Text = "Invoice";
             tabPage8.Text = "Configuration";
             tabPage9.Text = "Settings";
-            dataGridView1.Font = new Font("Arial", 10, FontStyle.Regular); 
+            dataGridView1.Font = new Font("Arial", 10, FontStyle.Regular);
+            this.dataGridView1.Rows.Add("1","sm_iig","LA","WH-LA-01","LA Warehouse 01","81890990292","ACTIVE");
+            this.dataGridView1.Rows.Add("2", "sm_iig", "LA", "WH-LA-02", "LA Warehouse 02", "65743579222", "ACTIVE");
+            this.dataGridView1.Rows.Add("3", "sm_iig", "LA", "WH-LA-03", "LA Warehouse 03", "71289203333", "ACTIVE");
+            this.dataGridView1.Rows.Add("4", "sm_iig", "LA", "WH-LA-04", "LA Warehouse 04", "90934533432", "INACTIVE");
+
+            //GET request to list out all the warehouses under that master
+            //using ( var client = new WebClient())
+            //{
+            //    var responseWarehouselist = client.DownloadString("https://wrp-api.posmasterus.com/wsdb/wholesale/warehouse/search/iig-test");
+            //    Console.WriteLine("==>>> Warehouse Search Response : {0}" + responseWarehouselist);
+            //}
+
+            //try
+            //{
+            //    string uri = "https://wrp-api.posmasterus.com/wsdb/wholesale/warehouse/search/iig-test";
+            //    var webRequest_warehouse = (HttpWebRequest)WebRequest.Create(uri);
+            //    var webResponse_warehouse = (HttpWebResponse)webRequest_warehouse.GetResponse();
+            //    if((webResponse_warehouse.StatusCode == HttpStatusCode.OK) && (webResponse_warehouse.ContentLength > 0))
+            //    {
+            //        var reader = new StreamReader(webResponse_warehouse.GetResponseStream());
+            //        string s = reader.ReadToEnd();
+            //        var arr = JsonConvert.DeserializeObject<JArray>(s);
+            //        dataGridView1.DataSource = s;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(string.Format("Status Code == {0}", webResponse_warehouse.StatusCode));
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void Btn_signout_Click(object sender, EventArgs e)
@@ -91,6 +128,17 @@ namespace test001
         {
             add_warehouse aw = new add_warehouse();
             aw.Show();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                tb_wh_detail_market.Text = dataGridView1.SelectedRows[0].Cells[2].Value + string.Empty;
+                tb_wh_detail_sm.Text     = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
+                tb_wh_detail_name.Text   = dataGridView1.SelectedRows[0].Cells[4].Value + string.Empty;
+                tb_wh_detail_tr.Text     = "0.8 %";
+            }
         }
     }
 }
