@@ -114,9 +114,13 @@ namespace test001
 
         private void Btn_signout_Click(object sender, EventArgs e)
         {
-            this.Close();
-            login lg = new login();
-            lg.Show();
+            var result = MessageBox.Show("Sure you want to Signout ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.Yes)
+            {
+                this.Close();
+                login lg = new login();
+                lg.Show();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
