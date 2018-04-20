@@ -37,7 +37,14 @@ namespace test001
             DialogResult result = MessageBox.Show("Warehouse Added Succesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (result == DialogResult.OK)
             {
-                add_warehouse.ActiveForm.Close();
+                if((txb_wh_id.Text.Length == 0) || (txb_wh_name.Text.Length == 0))
+                {
+                    MessageBox.Show("Mandatory Fields cannot be Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    add_warehouse.ActiveForm.Close();
+                }
             }
         }
     }
