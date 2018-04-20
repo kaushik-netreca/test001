@@ -30,18 +30,19 @@ namespace test001
             cbx_market.Items.Add("SB");
             cbx_market.Items.Add("SD");
             cbx_market.Items.Add("NC");
+            cbx_market.SelectedIndex = 0;
         }
 
         private void btn_add_warehouse_save_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Warehouse Added Succesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (result == DialogResult.OK)
+            if ((txb_wh_id.Text.Length == 0) || (txb_wh_name.Text.Length == 0) || (txb_tax.Text.Length == 0))
             {
-                if((txb_wh_id.Text.Length == 0) || (txb_wh_name.Text.Length == 0))
-                {
-                    MessageBox.Show("Mandatory Fields cannot be Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
+                MessageBox.Show(" * Marked Fields cannot be Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Warehouse Added Succesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
                 {
                     add_warehouse.ActiveForm.Close();
                 }
