@@ -5,4 +5,4 @@ AIM : To build a test C# .NET Desktop application that should UPDATE, RESTART an
 * API : Node.js REST
 * DB  : MySQL
 
-[ DEVELOPMENT STATUS : PENDING ]
+[ DEVELOPMENT STATUS : PENDING . . . ]
