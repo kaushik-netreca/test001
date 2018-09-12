@@ -7,4 +7,4 @@ AIM : To build a test C# .NET Desktop application that should UPDATE, RESTART an
 
 
 
-[ DEVELOPMENT STATUS : PENDING . . . .]
+[ DEVELOPMENT STATUS : Closed . . . .]
